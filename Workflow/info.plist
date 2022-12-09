@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>bundleid</key>
+	<string>com.vitorgalvao.alfred.rightclick</string>
+	<key>connections</key>
+	<dict>
+		<key>2FAB5CB3-A7E7-490C-A76D-CFEE439F8072</key>
+		<array/>
+		<key>A73E4A13-FA16-4A7D-A9F5-40A4C5B2B0B0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>2FAB5CB3-A7E7-490C-A76D-CFEE439F8072</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+	</dict>
+	<key>createdby</key>
+	<string>Vítor Galvão</string>
+	<key>description</key>
+	<string>Trigger a right-click on Finder files, with the keyboard</string>
+	<key>disabled</key>
+	<false/>
+	<key>name</key>
+	<string>Right Click</string>
+	<key>objects</key>
+	<array>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>action</key>
+				<integer>0</integer>
+				<key>argument</key>
+				<integer>0</integer>
+				<key>focusedappvariable</key>
+				<false/>
+				<key>focusedappvariablename</key>
+				<string></string>
+				<key>hotkey</key>
+				<integer>0</integer>
+				<key>hotmod</key>
+				<integer>0</integer>
+				<key>hotstring</key>
+				<string></string>
+				<key>leftcursor</key>
+				<false/>
+				<key>modsmode</key>
+				<integer>0</integer>
+				<key>relatedAppsMode</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.trigger.hotkey</string>
+			<key>uid</key>
+			<string>A73E4A13-FA16-4A7D-A9F5-40A4C5B2B0B0</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>0</integer>
+				<key>script</key>
+				<string>tell application "Finder"
+  if not frontmost then tell me to error "Finder is not the frontmost app"
+
+  set selected_items to the selection
+  if selected_items is {} then tell me to error "Nothing selected!"
+
+  set on_desktop to (insertion location as alias) is (path to desktop folder)
+end tell
+
+tell application "System Events" to tell process "Finder"
+  if on_desktop then
+    tell group 1 of scroll area 1 to tell (image 1 whose value of attribute "AXFilename" is the name of (item 1 of selected_items)) to perform action "AXShowMenu"
+  else
+    tell value of attribute "AXFocusedUIElement" to perform action "AXShowMenu"
+  end if
+end tell</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>6</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>2FAB5CB3-A7E7-490C-A76D-CFEE439F8072</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+	</array>
+	<key>readme</key>
+	<string>## Usage
+
+Configure the [Hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/) to trigger a right-click in Finder selections via the keyboard.
+
+![Workflow editor](images/about/canvas.png)</string>
+	<key>uidata</key>
+	<dict>
+		<key>2FAB5CB3-A7E7-490C-A76D-CFEE439F8072</key>
+		<dict>
+			<key>xpos</key>
+			<real>230</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+		<key>A73E4A13-FA16-4A7D-A9F5-40A4C5B2B0B0</key>
+		<dict>
+			<key>note</key>
+			<string>Double-click to configure the Hotkey</string>
+			<key>xpos</key>
+			<real>30</real>
+			<key>ypos</key>
+			<real>20</real>
+		</dict>
+	</dict>
+	<key>userconfigurationconfig</key>
+	<array/>
+	<key>version</key>
+	<string>2022.1</string>
+	<key>webaddress</key>
+	<string>https://github.com/vitorgalvao/right-click-workflow/</string>
+</dict>
+</plist>
