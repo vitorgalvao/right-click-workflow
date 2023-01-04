@@ -44,17 +44,21 @@
 				<key>focusedappvariablename</key>
 				<string></string>
 				<key>hotkey</key>
-				<integer>0</integer>
+				<integer>-1</integer>
 				<key>hotmod</key>
-				<integer>0</integer>
+				<integer>1048576</integer>
 				<key>hotstring</key>
-				<string></string>
+				<string>double tap</string>
 				<key>leftcursor</key>
 				<false/>
 				<key>modsmode</key>
 				<integer>0</integer>
+				<key>relatedApps</key>
+				<array>
+					<string>com.apple.finder</string>
+				</array>
 				<key>relatedAppsMode</key>
-				<integer>0</integer>
+				<integer>1</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.trigger.hotkey</string>
@@ -130,7 +134,7 @@ Configure the [Hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string>2022.1</string>
+	<string>2023.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/right-click-workflow/</string>
 </dict>

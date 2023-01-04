@@ -2,7 +2,7 @@
 
 Trigger a right-click on Finder files, with the keyboard
 
-<a href='https://alfred.app/workflows/vitor/right-click'>⤓ Install From the Alfred Gallery</a>
+<a href='https://alfred.app/workflows/vitor/right-click'>⤓ Install on the Alfred Gallery</a>
 
 ## Usage
 
