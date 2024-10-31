@@ -134,7 +134,7 @@ Configure the [Hotkey](https://www.alfredapp.com/help/workflows/triggers/hotkey/
 	<key>userconfigurationconfig</key>
 	<array/>
 	<key>version</key>
-	<string>2023.1</string>
+	<string>2024.1</string>
 	<key>webaddress</key>
 	<string>https://github.com/vitorgalvao/right-click-workflow/</string>
 </dict>
